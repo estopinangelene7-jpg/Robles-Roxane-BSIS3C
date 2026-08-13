@@ -1,0 +1,92 @@
+CREATE DATABASE roxane; 
+
+CREATE TABLE Employee (
+  EmployeeID INT PRIMARY KEY,
+  FirstName VARCHAR(50),
+  LastName VARCHAR(50),
+  Position VARCHAR(50),
+  DepartmentID VARCHAR(50)
+ 
+ );
+
+CREATE TABLE Department (
+  DepartmentID INT PRIMARY KEY,
+  DepartmentName VARCHAR(50)
+
+ );
+
+REATE TABLE attendance (
+  AttendanceID INT PRIMARY KEY,
+  EmployeeID VARCHAR(50),
+  Date VARCHAR(50),
+  TimeIn VARCHAR(50),
+  TimeOut VARCHAR(50)
+  
+ );
+
+CREATE TABLE payroll (
+  PayrollID INT PRIMARY KEY,
+  EmployeeID VARCHAR(50),
+  BasicSalary VARCHAR(50),
+  Allowance VARCHAR(50),
+  NetPay VARCHAR(50)
+  
+ );
+
+CREATE TABLE leavee (
+  LeaveID INT PRIMARY KEY,
+  EmployeeID VARCHAR(50),
+  LeaveType VARCHAR(50),
+  StartDate VARCHAR(50),
+  EndDate VARCHAR(50)
+  
+ );
+
+INSERT INTO employee( EmployeeID, FirstName, LastName, Position, DepartmentID)
+VALUES ('01', 'Carla', 'Santos', 'Accountant', 'D01');
+
+INSERT INTO employee( EmployeeID, FirstName, LastName, Position, DepartmentID)
+VALUES ('02', 'Jack', 'Ramos', 'HR Assistant', '02');
+
+INSERT INTO Department( DepartmentID, DepartmentName)
+VALUES ('01', 'Finance');
+
+INSERT INTO Department( DepartmentID, DepartmentName)
+VALUES ('02', 'Human Resources');
+
+INSERT INTO Attendance( AttendanceID, EmployeeID, DATE, TimeIn, TimeOut)
+VALUES ('01', '001', '07-01-2026', '8:00 AM', '5:00 PM');
+
+INSERT INTO Attendance( AttendanceID, EmployeeID, DATE, TimeIn, TimeOut)
+VALUES ('02', '002', '07-01-2026', '8:15 AM', '5:15 PM');
+
+INSERT INTO Payroll( PayrollID, EmployeeID, BasicSalary, Allowance, NetPay)
+VALUES ('001', '001', '30,000', '2,000', '32,000');
+
+INSERT INTO Payroll( PayrollID, EmployeeID, BasicSalary, Allowance, NetPay)
+VALUES ('002', '002', '22,000', '1,500', '23,000');
+
+INSERT INTO leavee( LeaveID, EmployeeID, LeaveType, StartDate, EndDate)
+VALUES ('01', '02', 'Sick Leave', '2026-07-01', '2026-07-10');
+
+INSERT INTO leavee( LeaveID, EmployeeID, LeaveType, StartDate, EndDate)
+VALUES ('02', '02', 'Vacation Leave', '2026-07-05', '2026-07-25');
+
+ALTER TABLE employee
+ADD username VARCHAR (50);
+
+
+ALTER TABLE employee
+ADD password VARCHAR (50);
+
+UPDATE employee SET username='roxane'
+WHERE employeeID='1'
+
+UPDATE employee SET username='irish'
+WHERE employeeID='2'
+
+UPDATE employee SET PASSWORD='1234'
+WHERE employeeID='1'
+
+UPDATE employee SET PASSWORD='12345'
+WHERE employeeID='2'
